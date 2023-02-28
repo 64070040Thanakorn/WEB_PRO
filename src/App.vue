@@ -18,5 +18,5 @@ export default {
 
 <template>
   <navbar title="Onsite COURSE" />
-  <landing msg="yes"/>
+  <landing />
 </template>
