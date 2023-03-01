@@ -1,6 +1,6 @@
 <script setup>
-import navbar from './components/navbar.vue'
-import landing from './pages/landing.vue'
+import navbar from './components/navbar.vue';
+import landing from './views/landing.vue';
 
 </script>
 
@@ -17,6 +17,6 @@ export default {
 </script>
 
 <template>
-  <navbar title="Onsite COURSE" />
-  <landing />
+  <navbar/>
+  <router-view></router-view>
 </template>

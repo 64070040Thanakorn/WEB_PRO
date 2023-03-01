@@ -1,11 +1,11 @@
 <script setup>
-import btn from '/src/components/btn.vue'
+import btn from '/src/components/btn.vue';
 
 
 </script>
 <script>
 export default {
-    name: "landing",
+    name: "Landing",
 };
 </script>
 
