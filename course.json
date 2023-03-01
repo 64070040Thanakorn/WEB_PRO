@@ -1,0 +1,35 @@
+[
+  {
+    "course_id": 10001,
+    "img": null,
+    "name": "คอร์สเรียนดี01",
+    "category": "UX/UI",
+    "description": "เรียนแล้วเป็นนายกได้",
+    "start_date": "2023-03-01",
+    "end_date": "2023-03-31",
+    "price": 1990,
+    "amount": 16
+  },
+  {
+    "course_id": 10002,
+    "img": null,
+    "name": "คอร์สเรียนดี02",
+    "category": "UX/UI",
+    "description": "เรียนแล้วเป็นนายกได้",
+    "start_date": "2023-03-01",
+    "end_date": "2023-03-31",
+    "price": 1990,
+    "amount": 16
+  },
+  {
+    "course_id": 10003,
+    "img": null,
+    "name": "คอร์สเรียนดี03",
+    "category": "UX/UI",
+    "description": "เรียนแล้วเป็นนายกได้",
+    "start_date": "2023-03-01",
+    "end_date": "2023-03-31",
+    "price": 1990,
+    "amount": 16
+  }
+]
