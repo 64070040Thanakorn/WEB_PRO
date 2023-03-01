@@ -1,6 +1,8 @@
 <script setup>
 import navbar from './components/navbar.vue'
-import landing from './pages/landing.vue'
+import landing from './views/landing.vue'
+import login from './views/login.vue'
+import register from './views/register.vue'
 
 </script>
 
@@ -12,11 +14,13 @@ export default {
     components: {
       navbar,
       landing,
+      login,
+      register,
     }
 }
 </script>
 
 <template>
   <navbar title="Onsite COURSE" />
-  <landing />
+  <register />
 </template>

@@ -10,7 +10,7 @@ export default {
 </script>
 
 <template>
-    <div>
+    <section>
         <div class="bg-gray-2 h-[480px] flex justify-between px-52 items-center">
             <div class="flex flex-col pr-32">
                 <h1 class="text-6xl font-bold mb-12">
@@ -28,10 +28,9 @@ export default {
             </div>
         </div>
         <div class="container mx-auto mt-8">
-            <btn Title="All" class="bg-yellow-1" Href=""></btn>
-            <btn Title="Database" class="bg-gray-3 text-brown-2" Href=""></btn>
-            <btn Title="UX/UI Design" class="bg-gray-3 text-brown-2" Href=""></btn>
-            <btn Title="Front-end" class="bg-gray-3 text-brown-2" Href=""></btn>
+            <btn title="All" class="bg-yellow-1" href=""></btn>
+            <btn title="Database" class="bg-gray-3 text-brown-2" href=""></btn>
+            <btn title="UX/UI Design" class="bg-gray-3 text-brown-2" href=""></btn>
         </div>
-
-    </div></template>
+    </section>
+</template>
