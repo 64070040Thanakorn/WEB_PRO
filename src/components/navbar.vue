@@ -1,6 +1,6 @@
 <script setup>
 // import { ref } from 'vue'
-import '/src/App.vue'
+import '/src/App.vue';
 
 defineProps({
   title: String,
@@ -12,7 +12,7 @@ defineProps({
 export default {
   data() {
     return {
-      login_status: true,
+      login_status: false,
     };
   }
 }
@@ -25,18 +25,16 @@ export default {
       <a href="">
         <i class="fa-solid fa-magnifying-glass fa-3x text-yellow-1"></i>
       </a>
-      <a href="" class="ml-6 flex items-center">
+      <router-link to="/" class="ml-6 flex items-center">
         หน้าหลัก
-      </a>
-      <a href="" class="ml-6 flex items-center">
-        เข้าสู่ระบบ
-      </a>
+      </router-link>
+      <router-link to="/login" class="ml-6 flex items-center">เข้าสู่ระบบ</router-link>
       <button class="btn bg-yellow-1 ml-6 px-4 rounded-[30px]" href="">
         ลงทะเบียน
       </button>
     </div>
   </div>
-
+  
   <!-- login -->
   <div class="bg-brown-1 p-5 flex justify-between text-white font-bold" v-else>
     <div class="flex items-center text-2xl">{{ title }}</div>
