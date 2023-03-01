@@ -1,19 +1,3 @@
-<script setup>
-import course_card from '../components/course_card.vue'
-</script>
-
-<script>
-export default {
-    name: 'course',
-}
-</script>
-
-<style>
-/* body {
-        background-color: #F6F6F6;
-    } */
-</style>
-
 <template>
     <section>
         <div class="container mx-auto flex flex-col">
@@ -27,12 +11,12 @@ export default {
                                 <img src="../assets/landing_image.png" alt="">
                             </div>
                             <div class="container ml-32">
-                                <h1 class="text-4xl ">Usability Design and Psychology for Digital Products</h1>
-                                <p class="text-gray-3">ออกแบบ Digital Products ให้ใช้งานง่ายด้วยหลักจิตวิทยา</p>
-                                <p>1,990.00 บาท</p>
+                                <h1 class="text-4xl ">{{ course.name}}</h1>
+                                <p class="text-gray-3">{{ course.category }}</p>
+                                <p>{{ course.price }}.00 บาท</p>
                                 <div class="flex">
                                     <i class="fa-solid fa-users translate-y-1"></i>
-                                    <p class="ml-2">16/70</p>
+                                    <p class="ml-2">{{ course.amount }}/{{ course.max_amount }}</p>
                                 </div>
                                 <router-link to="/payment" class="bg-yellow-1 text-white rounded-[30px] px-28 py-1">สมัครเรียน</router-link>
                             </div>
@@ -40,15 +24,15 @@ export default {
 
                         <div class="ml-5">
                             <p class="border-l-4 border-yellow-1 pl-2">ผู้สอน</p>
-                            <p>- dr Thanakorn Sriwannawit</p>
+                            <p> {{ course.teacher }}</p>
                         </div>
                         <div class="ml-5">
                             <p class="border-l-4 border-yellow-1 pl-2">ตารางเวลา</p>
-                            <p>- 01/01/2020</p>
+                            <p>{{ course.start_date}} - {{ course.end_date }}</p>
                         </div>
                         <div class="ml-5">
                             <p class="border-l-4 border-yellow-1 pl-2">รายละเอียด</p>
-                            <p>- Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid nostrum tempore deleniti eligendi error quas repellendus maiores suscipit iste quae quaerat voluptatum corrupti in dolores non, praesentium temporibus consequuntur aliquam?</p>
+                            <p>{{ course.description }}</p>
                         </div>
 
 
@@ -78,3 +62,31 @@ export default {
         </div>
     </section>
 </template>
+
+<script setup>
+import courseData from '../../courseData.json';
+import course_card from '../components/course_card.vue';
+</script>
+
+<script>
+export default {
+    name: 'course',
+    methods:{
+      
+    },
+    computed:{
+      courseId(){
+        return parseInt(this.$route.params.id)
+      },
+      course(){
+        return courseData.find(course => course.course_id === this.courseId)
+      }
+    },
+}
+</script>
+
+<style>
+/* body {
+        background-color: #F6F6F6;
+    } */
+</style>

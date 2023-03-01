@@ -4,32 +4,38 @@
     "img": null,
     "name": "คอร์สเรียนดี01",
     "category": "UX/UI",
+    "teacher": "ผู้ช่วยศาสตราจารย ผู้บัญชาการทหารบก นายแพทย์ ดอกเตอร์ นรภัทร ศรีมูลน้อย",
     "description": "เรียนแล้วเป็นนายกได้",
     "start_date": "2023-03-01",
     "end_date": "2023-03-31",
     "price": 1990,
-    "amount": 16
+    "amount": 16,
+    "max_amount": 70
   },
   {
     "course_id": 10002,
     "img": null,
     "name": "คอร์สเรียนดี02",
     "category": "UX/UI",
+    "teacher": "ผู้ช่วยศาสตราจารย ผู้บัญชาการทหารบก นายแพทย์ ดอกเตอร์ นรภัทร ศรีมูลน้อย",
     "description": "เรียนแล้วเป็นนายกได้",
     "start_date": "2023-03-01",
     "end_date": "2023-03-31",
     "price": 1990,
-    "amount": 16
+    "amount": 7,
+    "max_amount": 10
   },
   {
     "course_id": 10003,
     "img": null,
     "name": "คอร์สเรียนดี03",
     "category": "UX/UI",
+    "teacher": "ผู้ช่วยศาสตราจารย ผู้บัญชาการทหารบก นายแพทย์ ดอกเตอร์ นรภัทร ศรีมูลน้อย",
     "description": "เรียนแล้วเป็นนายกได้",
     "start_date": "2023-03-01",
     "end_date": "2023-03-31",
     "price": 1990,
-    "amount": 16
+    "amount": 69,
+    "max_amount": 70
   }
 ]
