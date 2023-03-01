@@ -1,6 +1,8 @@
 <script setup>
-import navbar from './components/navbar.vue';
-import landing from './views/landing.vue';
+import navbar from './components/navbar.vue'
+import landing from './views/landing.vue'
+import login from './views/login.vue'
+import register from './views/register.vue'
 
 </script>
 
@@ -12,6 +14,8 @@ export default {
     components: {
       navbar,
       landing,
+      login,
+      register,
     }
 }
 </script>

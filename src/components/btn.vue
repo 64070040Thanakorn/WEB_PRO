@@ -1,11 +1,11 @@
 <script setup>
 
 defineProps({
-    Title: String,
-    Href: String,
+    title: String,
+    href: String,
 })
 </script>
 
 <template>
-    <button class="px-6 py-1 rounded-[20px] text-xl mx-2" :src="Href"> {{ Title }}</button>
+    <button class="px-6 py-1 rounded-[20px] text-xl mx-2" :href="href"> {{ title }}</button>
 </template>
