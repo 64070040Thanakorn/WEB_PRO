@@ -1,5 +1,6 @@
 <script setup>
 import btn from '/src/components/btn.vue'
+import course_card from '../components/course_card.vue'
 
 
 </script>
@@ -28,9 +29,17 @@ export default {
             </div>
         </div>
         <div class="container mx-auto mt-8">
-            <btn title="All" class="bg-yellow-1" href=""></btn>
-            <btn title="Database" class="bg-gray-3 text-brown-2" href=""></btn>
-            <btn title="UX/UI Design" class="bg-gray-3 text-brown-2" href=""></btn>
+            <btn title="All" class="bg-yellow-1"></btn>
+            <btn title="Database" class="bg-gray-3 text-brown-2"></btn>
+            <btn title="UX/UI Design" class="bg-gray-3 text-brown-2"></btn>
+            <div class="grid grid-cols-4 gap-8 my-5 justify-items-center">
+                <course_card></course_card>
+                <course_card></course_card>
+                <course_card></course_card>
+                <course_card></course_card>
+                <course_card></course_card>
+                <course_card></course_card>
+            </div>
         </div>
     </section>
 </template>

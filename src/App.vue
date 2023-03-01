@@ -21,6 +21,6 @@ export default {
 </script>
 
 <template>
-  <navbar/>
+  <navbar title="Onsite COURSE"/>
   <router-view></router-view>
 </template>
