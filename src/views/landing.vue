@@ -1,12 +1,16 @@
 <script setup>
-import btn from '/src/components/btn.vue'
-import course_card from '../components/course_card.vue'
-
+import courseData from '../../courseData.json';
+import btn from '/src/components/btn.vue';
 
 </script>
 <script>
 export default {
     name: "landing",
+    data() {
+      return {
+        courseData
+      }
+    }
 };
 </script>
 
@@ -33,12 +37,10 @@ export default {
             <btn title="Database" class="bg-gray-3 text-brown-2"></btn>
             <btn title="UX/UI Design" class="bg-gray-3 text-brown-2"></btn>
             <div class="grid grid-cols-4 gap-8 my-5 justify-items-center">
-                <course_card></course_card>
-                <course_card></course_card>
-                <course_card></course_card>
-                <course_card></course_card>
-                <course_card></course_card>
-                <course_card></course_card>
+                <router-link v-for="course in courseData" :key="course.course_id" :to="{name: 'course.show', params:{id: course.course_id}}">
+                  <!-- <div>{{ course.course_id }}</div> -->
+                  <course_card></course_card>
+                </router-link>
             </div>
         </div>
     </section>
