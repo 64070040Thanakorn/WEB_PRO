@@ -39,7 +39,7 @@ export default {
             <div class="grid grid-cols-4 gap-8 my-5 justify-items-center">
                 <router-link v-for="course in courseData" :key="course.course_id" :to="{name: 'course.show', params:{id: course.course_id}}">
                   <!-- <div>{{ course.course_id }}</div> -->
-                  <course_card></course_card>
+                  <course_card :title="course.name" :description="course.description" :category="course.category" :price="course.price"></course_card>
                 </router-link>
             </div>
         </div>
