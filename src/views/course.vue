@@ -21,7 +21,7 @@ export default {
             <!-- This course -->
             <div class="flex my-12">
                 <div class="flex flex-col basis-8/12">
-                    <div class="flex flex-col border-2 border-black bg-white rounded-[20px]">
+                    <div class="flex flex-col border-2 border-black bg-white rounded-[15px]">
                         <div class="flex justify-between m-4">
                             <div class="container">
                                 <img src="../assets/landing_image.png" alt="">
@@ -34,7 +34,7 @@ export default {
                                     <i class="fa-solid fa-users translate-y-1"></i>
                                     <p class="ml-2">16/70</p>
                                 </div>
-                                <button class="btn bg-yellow-1 text-white rounded-[30px] px-28">สมัครเรียน</button>
+                                <router-link to="/payment" class="bg-yellow-1 text-white rounded-[30px] px-28 py-1">สมัครเรียน</router-link>
                             </div>
                         </div>
 
