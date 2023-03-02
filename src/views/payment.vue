@@ -15,6 +15,7 @@ export default {
       creditcard: null,
       cvc: null,
       exp: null,
+      card_type: null,
       courseData: courseData,
       type: null,
       user:{},
@@ -27,8 +28,10 @@ export default {
       const creditcard = {
         creditcard: this.creditcard,
         cvc: this.cvc,
-        exp: this.exp
+        exp: this.exp,
+        payment_methods: this.payment_methods,
       }
+
       const payment = {
         payment: this.payment.length + 1,
         user_id: this.user.id,
@@ -37,8 +40,12 @@ export default {
         sumary: this.course.price
       }
       
+      // fix this shit
+      if (!(this.user.creditcard.includes(this.creditcard))) {
+        this.user.creditcard.push(creditcard)
+        console.log(this.creditcard)
+      }
       this.user.enroll.push(this.course)
-      this.user.creditcard.push(creditcard)
       this.user.payment_history.push(payment)
       
       localStorage.setItem('signedInAccount', JSON.stringify(this.user))
@@ -83,7 +90,7 @@ export default {
 
 </script>
 <template>
-  <section class="h-[100vh]">
+  <section>
     <div class="flex mt-10 justify-center">
       <!-- ชำระเงิน -->
       <div class="px-10">
@@ -138,11 +145,15 @@ export default {
           <div>
             <div class="flex flex-col px-4 py-4">
               <div class="border-2 rounded-md py-8 px-10">
-                <input class="text-yellow-1" type="radio" name="1" id="" value="1" v-model="this.payment_methods">
-                <label class="ml-5" for="">ชำระผ่านบัตรเครดิต/เดบิต</label>
+                <input class="text-yellow-1" type="radio" name="1" id="" value="MasterCard" v-model="this.payment_methods">
+                <label class="ml-5" for="">ชำระผ่านบัตรเครดิต/เดบิต (MasterCard)</label>
+              </div>
+              <div class="border-2 rounded-md mt-2 py-8 px-10">
+                <input class="text-yellow-1" type="radio" name="1" id="" value="Visa" v-model="this.payment_methods">
+                <label class="ml-5" for="">ชำระผ่านบัตรเครดิต/เดบิต (Visa)</label>
               </div>
               <div class="border-2 rounded-md py-8 px-10 mt-2">
-                <input type="radio" name="1" id="" value="2" v-model="this.payment_methods">
+                <input type="radio" name="1" id="">
                 <label class="ml-5" for="">ชำระผ่านด้วย PromptPay (QR Code)</label>
               </div>
             </div>
