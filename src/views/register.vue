@@ -3,40 +3,50 @@ export default {
     name: "register",
     data() {
         return {
-            users: {
-                first_name: null,
-                last_name: null,
-                email: null,
-                password: null,
-                info: null,
-                phone: null,
-                address: null
-            },
-        };
+          first_name: null,
+          last_name: null,
+          email: null,
+          password: null,
+          confirm_password: null,              
+          accounts: []
+        }
     },
     methods: {
-        saveObjectToJsonFile() {
-            // Step 1: Convert object to JSON string
-            const json = JSON.stringify(this.users);
+      register(){
+        const existingAccount = this.accounts.find(account => {
+          return account.email === this.email;
+        })
+        if(existingAccount){
+          alert('email already exinst')
+        } else if (this.password !== this.confirm_password){
+          alert('password not match')
+        } else {
+          const newAccount = {
+            id: this.accounts.length + 1,
+            first_name: this.first_name,
+            last_name: this.last_name,
+            email: this.email,
+            password: this.password,
+            info: null,
+            phone: null,
+            address: null,
+            enroll: [],
+            payment_history: [],
+            creditcard: []
+          }
 
-            // Step 2: Create new Blob object
-            const blob = new Blob([json], { type: 'application/json' });
-
-            // Step 3: Create new URL object
-            const url = URL.createObjectURL(blob);
-
-            // Step 4: Create new anchor element and trigger download
-            const link = document.createElement('a');
-            link.href = url;
-            link.download = 'users.json';
-            document.body.appendChild(link);
-            link.click();
-
-            // Step 5: Clean up
-            document.body.removeChild(link);
-            URL.revokeObjectURL(url);
-        },
+          this.accounts.push(newAccount)
+          localStorage.setItem('accounts', JSON.stringify(this.accounts))
+          this.$router.push('/login')
+        }
+      }
     },
+    created(){
+      const accountData = localStorage.getItem('accounts');
+      if (accountData) {
+        this.accounts = JSON.parse(accountData);
+      }
+    }
 }
 </script>
 
@@ -48,22 +58,22 @@ export default {
                 <div class="bg-gray-3 p-5 mx-80 mt-5 flex justify-center">
                     <div class="flex flex-col">
                         <p>ชื่อ</p>
-                        <input type="text" :first_name="this.first_name" v-model="this.users.first_name">
+                        <input type="text" v-model="this.first_name">
                         <p>นามสกุล</p>
-                        <input type="text" :last_name="this.last_name" v-model="this.users.last_name">
+                        <input type="text" v-model="this.last_name">
                         <p>อีเมล</p>
-                        <input type="text" :email="this.email" v-model="this.users.email">
+                        <input type="text" v-model="this.email">
                         <div class="flex justify-between">
                             <div>
                                 <p>รหัสผ่าน</p>
-                                <input type="text" :password="this.password" v-model="this.users.password">
+                                <input type="text" v-model="this.password">
                             </div>
                             <div>
                                 <p>ยืนยันรหัสผ่าน</p>
-                                <input type="text">
+                                <input type="text" v-model="this.confirm_password">
                             </div>
                         </div>
-                        <button class="bg-yellow-1 mt-3" @click="saveObjectToJsonFile()">ลงทะเบียน</button>
+                        <button class="bg-yellow-1 mt-3" @click="register">ลงทะเบียน</button>
                         <p class="text-center">หรือ</p>
                         <button class="bg-gray-2">Sign up with Google</button>
                         <div class="flex justify-between mx-8">
