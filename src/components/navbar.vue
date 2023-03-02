@@ -10,19 +10,19 @@ defineProps({
 
 <script>
 export default {
-    components: { router },
-    data () {
-      return {
-        user: {},
-      }
-    },
-    created(){
-      const user = localStorage.getItem('signedInAccount')
-      if(user){
-        this.loginState = localStorage.getItem('login_status') === 'true';
-        this.user = JSON.parse(user);
-      }
+  components: { router },
+  data () {
+    return {
+      user: {},
     }
+  },
+  created(){
+    const user = localStorage.getItem('signedInAccount')
+    if(user){
+      this.loginState = localStorage.getItem('login_status') === 'true';
+      this.user = JSON.parse(user);
+    }
+  }
 }
 </script>
 <template>

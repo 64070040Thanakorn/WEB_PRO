@@ -18,7 +18,7 @@
                                     <i class="fa-solid fa-users translate-y-1"></i>
                                     <p class="ml-2">{{ course.amount }}/{{ course.max_amount }}</p>
                                 </div>
-                                <router-link to="/payment" class="bg-yellow-1 text-white rounded-[30px] px-28 py-1">สมัครเรียน</router-link>
+                                <router-link :to="{name:'payment', params: {id:course.course_id}}" class="bg-yellow-1 text-white rounded-[30px] px-28 py-1">สมัครเรียน</router-link>
                             </div>
                         </div>
 
@@ -51,12 +51,10 @@
             <div>
                 <h1 class="text-2xl">คอร์สอื่นๆ ที่น่าสนใจ</h1>
                 <div class="grid grid-cols-4 gap-8 my-5 justify-items-center">
-                <course_card></course_card>
-                <course_card></course_card>
-                <course_card></course_card>
-                <course_card></course_card>
-                <course_card></course_card>
-                <course_card></course_card>
+                  <router-link v-for="course in courseData" :key="course.course_id" :to="{ name: 'course.show', params: { id: course.course_id } }">
+                    <course_card :title="course.name" :description="course.description" :category="course.category"
+                      :price="course.price"></course_card>
+                  </router-link>
             </div>
             </div>
         </div>
@@ -71,8 +69,10 @@ import course_card from '../components/course_card.vue';
 <script>
 export default {
     name: 'course',
-    methods:{
-      
+    data(){
+      return{
+        courseData: courseData
+      }
     },
     computed:{
       courseId(){
