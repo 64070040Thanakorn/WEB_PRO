@@ -8,20 +8,20 @@
     "description": "เรียนแล้วเป็นนายกได้",
     "start_date": "2023-03-01",
     "end_date": "2023-03-31",
-    "price": 1990,
+    "price": 1000,
     "amount": 16,
     "max_amount": 70
   },
   {
     "course_id": 10002,
     "img": null,
-    "name": "คอร์สเรียนดี02",
+    "name": "อะไรนะ02",
     "category": "Database",
     "teacher": "ผู้ช่วยศาสตราจารย ผู้บัญชาการทหารบก นายแพทย์ ดอกเตอร์ นรภัทร ศรีมูลน้อย",
     "description": "เรียนแล้วเป็นนายกได้",
     "start_date": "2023-03-01",
     "end_date": "2023-03-31",
-    "price": 1990,
+    "price": 1500,
     "amount": 7,
     "max_amount": 10
   },
@@ -47,7 +47,7 @@
     "description": "เรียนแล้วเป็นนายกได้",
     "start_date": "2023-03-01",
     "end_date": "2023-03-31",
-    "price": 1990,
+    "price": 1200,
     "amount": 20,
     "max_amount": 70
   }
@@ -61,7 +61,7 @@
     "description": "เรียนแล้วเป็นนายกได้",
     "start_date": "2023-03-01",
     "end_date": "2023-03-31",
-    "price": 1990,
+    "price": 3000,
     "amount": 50,
     "max_amount": 100
   },
@@ -74,7 +74,7 @@
     "description": "เรียนแล้วเป็นนายกได้",
     "start_date": "2023-03-01",
     "end_date": "2023-03-31",
-    "price": 1990,
+    "price": 4000,
     "amount": 69,
     "max_amount": 70
   },
@@ -87,7 +87,7 @@
     "description": "เรียนแล้วเป็นนายกได้",
     "start_date": "2023-03-01",
     "end_date": "2023-03-31",
-    "price": 1990,
+    "price": 100000,
     "amount": 69,
     "max_amount": 70
   },
@@ -100,7 +100,7 @@
     "description": "เรียนแล้วเป็นนายกได้",
     "start_date": "2023-03-01",
     "end_date": "2023-03-31",
-    "price": 1990,
+    "price": 50,
     "amount": 1,
     "max_amount": 20
   }

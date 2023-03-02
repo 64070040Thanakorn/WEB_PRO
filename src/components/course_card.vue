@@ -26,7 +26,7 @@ export default {
                   <p class="text-gray-1">{{ description }}</p>
               </div>
               <div class="flex justify-end">
-                  <p>{{  price }}</p>
+                  <p>{{  price }}-</p>
               </div>
           </div>
     </section>

@@ -6,11 +6,11 @@ import login from "./views/login.vue";
 import profile from "./views/profile/profile_main.vue";
 import register from "./views/register.vue";
 
-import { useFetchStore } from '@/stores/counter';
-import { storeToRefs } from 'pinia';
-const store = useFetchStore()
-const { users } = storeToRefs(store);
-const { auth } = store
+// import { useFetchStore } from '@/stores/counter';
+// import { storeToRefs } from 'pinia';
+// const store = useFetchStore()
+// const { users } = storeToRefs(store);
+// const { auth } = store
 
 export default {
   data() {
