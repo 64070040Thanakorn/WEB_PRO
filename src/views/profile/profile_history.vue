@@ -1,0 +1,27 @@
+<script setup>
+import profile_history_card from '../../components/profile_history_card.vue';
+defineProps({
+    title: String,
+})
+</script>
+
+<script>
+   export default {
+        name: "profile_history"
+   }
+</script>
+
+<template>
+    <div class="flex flex-col basis-9/12">
+        <div class="flex flex-col">
+            <div class="flex justify-end">
+                <p class="text-xl mb-3 mb-1"><i class="fa-sharp fa-solid fa-clock-rotate-left"></i><span class="ml-2">{{title}}</span></p>
+            </div>
+            <hr>
+            <profile_history_card></profile_history_card>
+            <profile_history_card></profile_history_card>
+            <profile_history_card></profile_history_card>
+
+        </div>
+    </div>
+</template>
