@@ -33,7 +33,7 @@ export default {
       <router-link to="/register"  class="btn bg-yellow-1 ml-6 px-4 rounded-[30px] items-center flex">
         ลงทะเบียน
       </router-link>
-      <router-link :to="{name: 'profile.show', params:{id: this.user_id}}" class="ml-6">
+      <router-link :to="{name: 'profile', params:{id: this.user_id}}" class="ml-6">
         <i class="fa-solid fa-circle-user fa-3x text-yellow-1"></i>
       </router-link>
     </div>

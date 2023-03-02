@@ -1,6 +1,5 @@
 <script setup>
-// import Users from '../../users.json'
-
+// import Users from '../../../users.json'
 defineProps({
     user: JSON,
     Users: Array,
@@ -9,25 +8,24 @@ defineProps({
 </script>
 
 <script>
-export default {
-    name: "profile_edit",
-    data() {
-        return {
-
+    export default {
+        name: "profile_edit",
+        data() {
+            return {
+            }
         }
     }
-}
 </script>
 
 <template>
     <div class="flex flex-col basis-9/12">
-        <div class="flex justify-end mb-1">
-            <p class="text-xl font-bold"><i class="fa-solid fa-user-pen"></i><span class="ml-2">{{title}}</span></p>
+        <div class="flex justify-end">
+            <p class="text-xl font-bold mb-3"><i class="fa-solid fa-user-pen"></i><span class="ml-2">{{title}}</span></p>
         </div>
         <hr>
         <p class="text-lg font-bold">ข้อมูลส่วนตัว</p>
         <p class="text-gray-1">ชื่อ-นามสกุล</p>
-        <div class="flex justify-between">
+        <!-- <div class="flex justify-between">
             <p>{{ user.first_name }} {{ user.last_name }}</p>
             <a href="" class="text-brown-3">
                 <i class="fa-solid fa-pen-to-square fa-1x"></i>
@@ -64,7 +62,7 @@ export default {
                     <span>แก้ไข</span>
                 </a>
             </div>
-        </div>
+        </div> -->
         <a class="bg-red-500 w-[30%] text-white text-center mt-4 rounded-[10px]" href="">ออกจากระบบ</a>
     </div>
 </template>
