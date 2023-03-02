@@ -6,9 +6,20 @@ import btn from '/src/components/btn.vue';
 <script>
 export default {
     name: "landing",
-    data() {
-      return {
-        courseData
+      data() {
+        return {
+          courseData: courseData,
+          type: null
+        }
+    },
+    computed:{
+      fillterByCategory(){
+        if(!this.type) return courseData
+        if(this.type === 'Datatype'){
+          return courseData.filter(course => course.category === this.type)
+        } else if (this.type === 'UX/UI'){
+          return courseData.filter(course => course.category === this.type)
+        }
       }
     }
 };
@@ -33,12 +44,11 @@ export default {
             </div>
         </div>
         <div class="container mx-auto mt-8">
-            <btn title="All" class="bg-yellow-1"></btn>
-            <btn title="Database" class="bg-gray-3 text-brown-2"></btn>
-            <btn title="UX/UI Design" class="bg-gray-3 text-brown-2"></btn>
+            <btn @click="$event => type = null" title="All" class="bg-yellow-1"></btn>
+            <btn @click="$event => type = 'Database'" title="Database" class="bg-gray-3 text-brown-2"></btn>
+            <btn @click="$event => type = 'UX/UI'" title="UX/UI Design" class="bg-gray-3 text-brown-2"></btn>
             <div class="grid grid-cols-4 gap-8 my-5 justify-items-center">
-                <router-link v-for="course in courseData" :key="course.course_id" :to="{name: 'course.show', params:{id: course.course_id}}">
-                  <!-- <div>{{ course.course_id }}</div> -->
+                <router-link v-for="course in fillterByCategory" :key="course.course_id" :to="{name: 'course.show', params:{id: course.course_id}}">
                   <course_card :title="course.name" :description="course.description" :category="course.category" :price="course.price"></course_card>
                 </router-link>
             </div>
