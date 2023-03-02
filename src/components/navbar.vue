@@ -4,7 +4,6 @@ import router from '../router';
 defineProps({
   title: String,
   login_status: Boolean,
-  user_id: Number,
 })
 
 </script>
@@ -14,6 +13,14 @@ export default {
     components: { router },
     data () {
       return {
+        user: {},
+      }
+    },
+    created(){
+      const user = localStorage.getItem('signedInAccount')
+      if(user){
+        this.loginState = localStorage.getItem('login_status') === 'true';
+        this.user = JSON.parse(user);
       }
     }
 }
@@ -33,9 +40,6 @@ export default {
       <router-link to="/register"  class="btn bg-yellow-1 ml-6 px-4 rounded-[30px] items-center flex">
         ลงทะเบียน
       </router-link>
-      <router-link :to="{name: 'profile', params:{id: this.user_id}}" class="ml-6">
-        <i class="fa-solid fa-circle-user fa-3x text-yellow-1"></i>
-      </router-link>
     </div>
   </div>
   
@@ -49,7 +53,7 @@ export default {
       <router-link to="/" class="ml-6 flex items-center">
         หน้าหลัก
       </router-link>
-      <router-link :to="{name: 'profile.show', params:{id: this.user_id}}" class="ml-6">
+      <router-link :to="{name: 'profile.show', params:{id: this.user.id}}" class="ml-6">
         <i class="fa-solid fa-circle-user fa-3x text-yellow-1"></i>
       </router-link>
     </div>

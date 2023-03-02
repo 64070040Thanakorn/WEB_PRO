@@ -1,8 +1,7 @@
 <script setup>
-import Users from '../../../users.json'
 import profile_selecter from '../../components/profile_selecter.vue';
-import profile_edit from './profile_edit.vue';
 import profile_course from './profile_course.vue';
+import profile_edit from './profile_edit.vue';
 import profile_history from './profile_history.vue';
 import profile_payment from './profile_payment.vue';
 </script>
@@ -12,7 +11,7 @@ export default {
     name: "profile",
     data () {
         return {
-            Users,
+          user: null,
         }
     },
 
@@ -20,9 +19,9 @@ export default {
       userId(){
         return parseInt(this.$route.params.id)
       },
-      user(){
-        return Users.find(data => data.user_id === this.userId)
-      }
+      // user(){
+      //   return Users.find(data => data.user_id === this.userId)
+      // }
     },
     components: {
       profile_selecter,
@@ -30,6 +29,13 @@ export default {
       profile_course,
       profile_history,
       profile_payment,
+    },
+    created(){
+      const user = localStorage.getItem('signedInAccount')
+      if(user){
+        this.loginState = localStorage.getItem('login_status') === 'true';
+        this.user = JSON.parse(user);
+      }
     }
 }
 </script>
@@ -38,6 +44,7 @@ export default {
     <section>
         <div class="bg-yellow-2 p-12 m-20 flex">
             <profile_selecter course="คอร์สของฉัน" edit="จัดการโปรไฟล์" history="ประวัติการสั่งซื้อ" payment="การชำระเงิน"></profile_selecter>
+            {{ this.user }}
             <!-- <profile_course title="คอร์สของฉัน"></profile_course> -->
             <!-- <profile_edit :user="this.user" :Users="this.Users" title="จัดการโปรไฟล์"></profile_edit> -->
             <!-- <profile_history title="ประวัติการสั่งซื้อ"></profile_history> -->

@@ -1,40 +1,45 @@
-<script setup>
-import Users from '../../users.json'
-</script>
-
 <script>
 export default {
     name: "login",
     data() {
         return {
-            Users,
             email: null,
             password: null,
-            user_id: null,
-            login_status: false,
+            login_status: null,
+            account: []
         };
     },
 
     methods: {
-        checkLogin(event) {
-            var checks = false;
-            for (let i = 0; i < Users.length; i++) {
-                if (Users[i].email === this.email && Users[i].password === this.password) {
-                    checks = true;
-                    this.user_id = Users[i].user_id;
-                    break
-                }
-            }
-            if (checks) {
-                console.log(this.user_id)
-            }
-            else {
-                event.preventDefault();
-                alert("your email or password is not correct!");
-                
-            }
+      // existingAccount(){
+      //   return this.accounts.find(account => {
+      //     return account.email === this.email;
+      //   });
+      // },
+      login(){
+        const existingAccount = this.accounts.find(account => {
+          return account.email === this.email;
+        });
+        if(existingAccount){
+          if(existingAccount.password === this.password){
+            this.login_status = true
+            localStorage.setItem('login_status', this.login_status)
+            localStorage.setItem('signedInAccount', JSON.stringify(existingAccount))
+            this.$router.push('/')
+          } else {
+            alert('password wrong')
+          }
+        } else {
+          alert('email not found')
         }
+      }
     },
+    created() {
+      const accountData = localStorage.getItem('accounts');
+      if (accountData) {
+        this.accounts = JSON.parse(accountData);
+      }
+    }
 }
 </script>
 
@@ -50,7 +55,7 @@ export default {
                         <p>รหัสผ่าน</p>
                         <input type="password" required v-model="this.password">
                         <sub>ลืมรหัสผ่าน?</sub>
-                        <router-link to="/" type="submit" class="bg-yellow-1 mt-3 text-center" @click.prevent="checkLogin">เข้าสู่ระบบ</router-link>
+                        <button to="/" type="submit" class="bg-yellow-1 mt-3 text-center" @click.prevent="login">เข้าสู่ระบบ</button>
                         <p class="text-center">หรือ</p>
                         <button class="bg-gray-2">Sign in with Google</button>
                         <div class="flex justify-between mx-8">

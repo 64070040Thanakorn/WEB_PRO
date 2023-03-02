@@ -3,8 +3,8 @@ import course_card from "./components/course_card.vue";
 import navbar from "./components/navbar.vue";
 import landing from "./views/landing.vue";
 import login from "./views/login.vue";
-import register from "./views/register.vue";
 import profile from "./views/profile/profile_main.vue";
+import register from "./views/register.vue";
 
 </script>
 
@@ -12,15 +12,8 @@ import profile from "./views/profile/profile_main.vue";
 export default {
   data() {
     return {
-      login_status: false,
-      user_id: 101,
-      // first_name: null,
-      // last_name: null,
-      // email: null,
-      // password: null,
-      // info: null,
-      // phone: null,
-      // address: null,
+      loginState: false,
+      user: null,
     }
   },
   components: {
@@ -30,11 +23,18 @@ export default {
     register,
     course_card,
     profile,
+  },
+  created(){
+    const user = localStorage.getItem('signedInAccount')
+    if(user){
+      this.loginState = localStorage.getItem('login_status') === 'true';
+      this.user = JSON.parse(user);
+    }
   }
 }
 </script>
 
 <template>
-  <navbar title="Onsite COURSE" :login_status="this.login_status" :user_id="this.user_id"/>
+  <navbar title="Onsite COURSE" :login_status="this.loginState"/>
   <router-view></router-view>
 </template>
