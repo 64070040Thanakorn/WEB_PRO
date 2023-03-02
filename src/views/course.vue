@@ -1,3 +1,27 @@
+<script setup>
+import courseData from '../../courseData.json';
+import course_card from '../components/course_card.vue';
+</script>
+
+<script>
+export default {
+    name: 'course',
+    data(){
+      return{
+        courseData: courseData
+      }
+    },
+    computed:{
+      courseId(){
+        return parseInt(this.$route.params.id)
+      },
+      course(){
+        return courseData.find(course => course.course_id === this.courseId)
+      }
+    },
+}
+</script>
+
 <template>
     <section>
         <div class="container mx-auto flex flex-col">
@@ -60,33 +84,3 @@
         </div>
     </section>
 </template>
-
-<script setup>
-import courseData from '../../courseData.json';
-import course_card from '../components/course_card.vue';
-</script>
-
-<script>
-export default {
-    name: 'course',
-    data(){
-      return{
-        courseData: courseData
-      }
-    },
-    computed:{
-      courseId(){
-        return parseInt(this.$route.params.id)
-      },
-      course(){
-        return courseData.find(course => course.course_id === this.courseId)
-      }
-    },
-}
-</script>
-
-<style>
-/* body {
-        background-color: #F6F6F6;
-    } */
-</style>
