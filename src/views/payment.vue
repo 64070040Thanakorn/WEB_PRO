@@ -26,7 +26,7 @@ export default {
     payment(){
       
       const creditcard = {
-        creditcard: this.creditcard,
+        creditcard_number: this.creditcard,
         cvc: this.cvc,
         exp: this.exp,
         payment_methods: this.payment_methods,
@@ -41,10 +41,12 @@ export default {
       }
       
       // fix this shit
-      if (!(this.user.creditcard.includes(this.creditcard))) {
+      const checkExisting = this.user.creditcard.find(card => card.creditcard_number === this.creditcard)
+      if (!checkExisting) {
+        console.log('not founded')
         this.user.creditcard.push(creditcard)
-        console.log(this.creditcard)
       }
+      
       this.user.enroll.push(this.course)
       this.user.payment_history.push(payment)
       
@@ -60,7 +62,6 @@ export default {
         })
       }
       localStorage.setItem('accounts',JSON.stringify(this.accounts))
-      // console.log(this.accounts)
     }
   },
   computed: {
