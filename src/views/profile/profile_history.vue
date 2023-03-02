@@ -1,4 +1,5 @@
 <script setup>
+import { escapeHtml } from '@vue/shared';
 import profile_history_card from '../../components/profile_history_card.vue';
 import courseData from '/courseData.json'
 </script>
@@ -21,22 +22,9 @@ export default {
             this.loginState = localStorage.getItem('login_status') === 'true';
             this.user = JSON.parse(user);
         }
+        
+
     },
-    computed: {
-        courseQuery() {
-            for (let i = 0; i < this.courseData.length; i++) {
-                if (this.courseData[i] === "enroll") {
-                    this.enrollData = this.courseData[i]
-                }
-                else if (this.courseData[i] === "payment_history") {
-                    this.paymentData = this.courseData[i]
-                }
-                else if (this.courseData[i] === "creditcard"){
-                    this.creditData = this.courseData[i]
-                }
-            }
-        },
-    }
 }
 </script>
 
@@ -48,16 +36,8 @@ export default {
                         class="ml-2">ประวัติการสั่งซื้อ</span></p>
             </div>
             <hr>
-            <!-- <profile_history_card></profile_history_card> -->
-            <!-- <profile_history_card></profile_history_card> -->
-            <profile_history_card></profile_history_card>
-
-            <!-- <div v-for="course in user.enroll" :key="course.course_id">
-                {{ course }}
-            </div> -->
-            <router-link v-for="course in user.enroll" :key="course.course_id" :to="{ name: 'course.show', params: { id: course.course_id }}">
-
-                <profile_history_card :name="course.name" :start_date="course.start_date" :end_date="course.end_date" ></profile_history_card>
+            <router-link v-for="data in user.payment_history" :key="data.course_id" :to="{ name: 'course.show', params: { id: data.course_id }}">
+                <profile_history_card :course_id="data.course_id" :date="data.date" :summary="data.summary" :payment_methods="data.payment_methods" :course_name="data.course_name"></profile_history_card>
             </router-link>
         </div>
     </div>

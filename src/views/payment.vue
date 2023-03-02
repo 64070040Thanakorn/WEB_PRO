@@ -1,4 +1,5 @@
 <script setup>
+import { toHandlers } from 'vue';
 import courseData from '../../courseData.json';
 
 </script>
@@ -36,14 +37,17 @@ export default {
         payment: this.payment.length + 1,
         user_id: this.user.id,
         course_id: this.course.course_id,
+        course_name: this.course.name,
         date: Date.now(),
-        sumary: this.course.price
+        summary: this.course.price,
+        payment_methods: this.payment_methods,
       }
       
       // fix this shit
-      if (!(this.user.creditcard.includes(this.creditcard))) {
+      const checkExisting = this.user.creditcard.find(card => card.creditcard === this.creditcard)
+      if (!checkExisting) {
+        console.log('not founded')
         this.user.creditcard.push(creditcard)
-        console.log(this.creditcard)
       }
       this.user.enroll.push(this.course)
       this.user.payment_history.push(payment)
