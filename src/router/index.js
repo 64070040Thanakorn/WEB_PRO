@@ -4,6 +4,7 @@ import landing from '../views/landing.vue'
 import login from '../views/login.vue'
 import payment from '../views/payment.vue'
 import register from '../views/register.vue'
+import profile from '../views/profile.vue'
 
 const routes = [
   {
@@ -31,7 +32,11 @@ const routes = [
     name: 'payment',
     component: payment,
   },
-  
+  {
+    path: '/profile/:id',
+    name: 'profile.show',
+    component: profile,
+  },
 ]
 
 const router = createRouter({

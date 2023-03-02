@@ -1,0 +1,32 @@
+[
+    {
+        "user_id": 101,
+        "first_name": "นายยัดไข่",
+        "last_name": "ใส่ใจ",
+        "email": "yud@email.com",
+        "password": "12345",
+        "info": "นักศึกษา",
+        "phone": "0961234123",
+        "address": "บ้าน บางทีก็เหงาๆ"
+    },
+    {
+        "user_id": 102,
+        "first_name": "นางหลายใจ",
+        "last_name": "รักเดียว",
+        "email": "love@email.com",
+        "password": "67890",
+        "info": "นักศึกษา",
+        "phone": "0961234123",
+        "address": "บ้านอ่าว บางทีก็ดี"
+    },
+    {
+        "user_id": 103,
+        "first_name": "นาคิดไม่ออก",
+        "last_name": "อะไรดี",
+        "email": "idk@email.com",
+        "password": "12345",
+        "info": "นักศึกษา",
+        "phone": "0961234123",
+        "address": "บ้านพ่อง บางทีก็เหงาๆ"
+    }
+]
