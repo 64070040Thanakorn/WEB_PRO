@@ -11,11 +11,6 @@ export default {
     },
 
     methods: {
-      // existingAccount(){
-      //   return this.accounts.find(account => {
-      //     return account.email === this.email;
-      //   });
-      // },
       login(){
         const existingAccount = this.accounts.find(account => {
           return account.email === this.email;
