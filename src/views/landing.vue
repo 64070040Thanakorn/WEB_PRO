@@ -96,7 +96,7 @@ export default {
         <img src="src/assets/landing_image.png" />
       </div>
     </div>
-    <div class="container mx-auto mt-8">
+    <div class="container mx-auto my-8 mb-32">
       <btn @click="($event) => (type = null)" title="All" class="bg-gray-3 text-brown-2 focus:bg-yellow-1 focus:text-black"></btn>
       <btn @click="($event) => (type = 'Database')" title="Database" class="bg-gray-3 text-brown-2 focus:bg-yellow-1 focus:text-black"></btn>
       <btn @click="($event) => (type = 'UX/UI')" title="UX/UI Design" class="bg-gray-3 text-brown-2 focus:bg-yellow-1 focus:text-black"></btn>
