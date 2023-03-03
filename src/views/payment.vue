@@ -27,7 +27,7 @@ export default {
     payment(){
       
       const creditcard = {
-        creditcard_number: this.creditcard,
+        creditcard: this.creditcard,
         cvc: this.cvc,
         exp: this.exp,
         payment_methods: this.payment_methods,
@@ -43,8 +43,9 @@ export default {
         payment_methods: this.payment_methods,
       }
       
-      // fix this shit
-      if (!(this.user.creditcard.includes(this.creditcard))) {
+      const checkExisting = this.user.creditcard.find(card => card.creditcard === this.creditcard)
+      if (!checkExisting) {
+        console.log('not founded')
         this.user.creditcard.push(creditcard)
       }
       
