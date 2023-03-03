@@ -10,6 +10,7 @@ import profile from "../views/profile/profile_main.vue";
 import profile_payment from "../views/profile/profile_payment.vue";
 import register from "../views/register.vue";
 import resetpassword from "../views/resetpassword.vue";
+import profile_admin from '../views/profile/profile_admin.vue'
 
 const routes = [
   {
@@ -67,6 +68,11 @@ const routes = [
         path: "profile_payment",
         name: "profile_payment",
         component: profile_payment,
+      },
+      {
+        path: "profile_admin",
+        name: "profile_admin",
+        component: profile_admin,
       },
     ],
   },
