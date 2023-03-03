@@ -53,7 +53,7 @@ export default {
       <router-link to="/" class="ml-6 flex items-center">
         หน้าหลัก
       </router-link>
-      <router-link :to="{ path: '/profile/' + user.id + '/profile_edit', params:{id: this.user.id}}" class="ml-6">
+      <router-link :to="{ path: '/profile/' + user.id + '/profile_edit' }" class="ml-6">
         <i class="fa-solid fa-circle-user fa-3x text-yellow-1"></i>
       </router-link>
     </div>
