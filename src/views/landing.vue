@@ -76,7 +76,7 @@ export default {
     <div class="bg-gray-2 h-[480px] flex justify-between px-52 items-center">
       <div class="flex flex-col pr-32">
         <h1 class="text-6xl font-bold mb-12">
-          หาคอสเรียนออนไซด์ ที่ดีและหาได้ง่ายที่นี่
+          หาคอร์สเรียนออนไซด์ ที่ดีและหาได้ง่ายที่นี่
         </h1>
         <p class="text-gray-1 text-xl mb-12">
           มีพร้อมทั้ง workshops อุปการณ์ต่างๆให้พร้อม
