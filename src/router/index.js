@@ -9,6 +9,7 @@ import profile_history from "../views/profile/profile_history.vue";
 import profile from "../views/profile/profile_main.vue";
 import profile_payment from "../views/profile/profile_payment.vue";
 import register from "../views/register.vue";
+import resetpassword from "../views/resetpassword.vue";
 
 const routes = [
   {
@@ -20,6 +21,11 @@ const routes = [
     path: "/login",
     name: "login",
     component: login,
+  },
+  {
+    path: '/reset',
+    name: 'resert',
+    component: resetpassword
   },
   {
     path: "/course/:id",

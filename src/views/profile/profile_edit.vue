@@ -55,10 +55,10 @@ export default {
                 <p> {{ user.password }} </p>
             </div>
             <div class="flex items-center">
-                <a href="" class="text-brown-3">
+                <router-link class="text-brown-3" to="/reset">
                     <i class="fa-solid fa-pen-to-square fa-1x"></i>
                     <span>แก้ไข</span>
-                </a>
+                </router-link>
             </div>
         </div>
         <hr>
