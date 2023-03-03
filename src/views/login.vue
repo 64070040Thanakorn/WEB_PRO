@@ -40,7 +40,7 @@ export default {
 
 <template>
     <section>
-        <div class="container mx-auto py-16">
+        <div class="container mx-auto py-16 mb-32">
             <div class="flex flex-col">
                 <h1 class="text-4xl font-bold text-center">เข้าสู่ระบบ</h1>
                 <form class="bg-gray-3 p-5 mx-80 mt-5 flex justify-center">
