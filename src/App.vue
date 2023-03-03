@@ -1,6 +1,6 @@
 <script>
 import course_card from "./components/course_card.vue";
-import asdasd from "./components/footer.vue";
+import Footer from "./components/footer.vue";
 import navbar from "./components/navbar.vue";
 import landing from "./views/landing.vue";
 import login from "./views/login.vue";
@@ -18,7 +18,7 @@ export default {
     return {
       loginState: false,
       user: null,
-    }
+    };
   },
   components: {
     navbar,
@@ -27,20 +27,20 @@ export default {
     register,
     course_card,
     profile,
-    asdasd,
+    Footer,
   },
-  created(){
-    const user = localStorage.getItem('signedInAccount')
-    if(user){
-      this.loginState = localStorage.getItem('login_status') === 'true';
+  created() {
+    const user = localStorage.getItem("signedInAccount");
+    if (user) {
+      this.loginState = localStorage.getItem("login_status") === "true";
       this.user = JSON.parse(user);
     }
-  }
-}
+  },
+};
 </script>
 
 <template>
-  <navbar title="Onsite COURSE" :login_status="this.loginState"/>
-  <router-view></router-view>
-  <asdasd/>
+    <navbar title="Onsite COURSE" :login_status="this.loginState" />
+    <router-view></router-view>
+    <Footer/>
 </template>

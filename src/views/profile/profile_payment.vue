@@ -23,8 +23,13 @@ export default {
                         class="ml-2">การชำระเงิน</span></p>
             </div>
             <hr>
-            <div v-for="(credit, index) in user.creditcard" :key="index">
-                <profile_payment_card :creditcard="credit.creditcard" :exp="credit.exp" :payment_methods="credit.payment_methods"></profile_payment_card>
+            <div v-if="user.creditcard.length != 0">
+                <div v-for="(credit, index) in user.creditcard" :key="index">
+                    <profile_payment_card :creditcard="credit.creditcard" :exp="credit.exp" :payment_methods="credit.payment_methods"></profile_payment_card>
+                </div>
+            </div>
+            <div v-else class="flex justify-center my-12">
+                <p>ยังไม่มีวิธีการชำระเงิน <router-link to="/" class="text-yellow-1 font-bold">ดูคอร์สที่น่าสนใจ</router-link></p>
             </div>
         </div>
     </div>

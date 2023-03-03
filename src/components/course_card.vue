@@ -5,7 +5,7 @@ export default {
       title: String,
       description: String,
       category: String,
-      price: Number
+      price: Number,
     }
 }
 </script>

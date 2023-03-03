@@ -36,9 +36,14 @@ export default {
                         class="ml-2">ประวัติการสั่งซื้อ</span></p>
             </div>
             <hr>
-            <router-link v-for="data in user.payment_history" :key="data.course_id" :to="{ name: 'course.show', params: { id: data.course_id }}">
-                <profile_history_card :course_id="data.course_id" :date="data.date" :summary="data.summary" :payment_methods="data.payment_methods" :course_name="data.course_name"></profile_history_card>
-            </router-link>
+            <div v-if="user.payment_history.length != 0">
+                <router-link v-for="data in user.payment_history" :key="data.course_id" :to="{ name: 'course.show', params: { id: data.course_id }}">
+                    <profile_history_card :course_id="data.course_id" :date="data.date" :summary="data.summary" :payment_methods="data.payment_methods" :course_name="data.course_name"></profile_history_card>
+                </router-link>
+            </div>
+            <div v-else class="flex justify-center my-12">
+                <p>ยังไม่มีประวัติการสั่งซื้อ <router-link to="/" class="text-yellow-1 font-bold">ดูคอร์สที่น่าสนใจ</router-link></p>
+            </div>
         </div>
     </div>
 </template>
