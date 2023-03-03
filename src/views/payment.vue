@@ -1,5 +1,4 @@
 <script setup>
-import { toHandlers } from 'vue';
 import courseData from '../../courseData.json';
 
 </script>
@@ -64,6 +63,7 @@ export default {
         })
       }
       localStorage.setItem('accounts',JSON.stringify(this.accounts))
+      this.$router.push('/')
     }
   },
   computed: {
