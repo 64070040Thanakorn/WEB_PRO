@@ -4,6 +4,7 @@ import profile_course from './profile_course.vue';
 import profile_edit from './profile_edit.vue';
 import profile_history from './profile_history.vue';
 import profile_payment from './profile_payment.vue';
+import profile_admin from './profile_admin.vue';
 </script>
 
 <script>
@@ -29,6 +30,7 @@ export default {
       profile_course,
       profile_history,
       profile_payment,
+      profile_admin,
     },
     created(){
       const user = localStorage.getItem('signedInAccount')

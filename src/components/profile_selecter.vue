@@ -50,6 +50,13 @@ export default {
                     <span class="ml-2">{{payment}}</span>
                 </router-link>
             </div>
+
+            <div>
+                <router-link :to="{ path: '/profile/' + user.id + '/profile_admin' }" class="text-gray-1">
+                    <i class="fa-solid fa-lock"></i>
+                    <span class="ml-2">แอดมิน</span>
+                </router-link>
+            </div>
         </div>
     </div>
 </template>
