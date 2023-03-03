@@ -52,7 +52,7 @@ export default {
                 <p class="text-gray-1">อีเมล</p>
                 <p> {{ user.email }}</p>
                 <p class="text-gray-1">รหัสผ่าน</p>
-                <p> {{ user.password }} </p>
+                <input type="password" class="bg-transparent" disabled :value="user.password">
             </div>
             <div class="flex items-center">
                 <router-link class="text-brown-3" to="/reset">

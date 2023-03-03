@@ -66,11 +66,11 @@ export default {
                         <div class="flex justify-between">
                             <div>
                                 <p>รหัสผ่าน</p>
-                                <input type="text" v-model="this.password">
+                                <input type="password" v-model="this.password">
                             </div>
                             <div>
                                 <p>ยืนยันรหัสผ่าน</p>
-                                <input type="text" v-model="this.confirm_password">
+                                <input type="password" v-model="this.confirm_password">
                             </div>
                         </div>
                         <button class="bg-yellow-1 mt-3" @click="register">ลงทะเบียน</button>
