@@ -58,7 +58,7 @@ export default {
                         <input type="text" v-model="this.password">
                         <p>พาสเวิร์ดใหม่</p>
                         <input type="text" v-model="this.newPasword">
-                        <router-link to="/reset" class="bg-yellow-1 mt-3" @click="register">เปลี่ยนรหัสผ่าน</router-link>
+                        <router-link to="/" class="bg-yellow-1 mt-3" @click="register">เปลี่ยนรหัสผ่าน</router-link>
                     </div>
                 </div>
             </div>
