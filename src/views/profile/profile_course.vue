@@ -30,9 +30,14 @@ export default {
                 <p class="text-xl mb-3 font-bold"><i class="fa-solid fa-pen"></i><span class="ml-2">คอร์สของฉัน</span></p>
             </div>
             <hr>
-            <router-link v-for="course in user.enroll" :key="course.course_id" :to="{ name: 'course.show', params: { id: course.course_id }}">
-                <profile_course_card :category="course.category" :name="course.name" :dec="course.dec" :teacher="course.teacher" :start_date="course.start_date" :end_date="course.end_date"></profile_course_card>
-            </router-link>
+            <div v-if="user.enroll.length != 0">
+                <router-link v-for="course in user.enroll" :key="course.course_id" :to="{ name: 'course.show', params: { id: course.course_id }}">
+                    <profile_course_card :category="course.category" :name="course.name" :dec="course.dec" :teacher="course.teacher" :start_date="course.start_date" :end_date="course.end_date"></profile_course_card>
+                </router-link>
+            </div>
+            <div v-else class="flex justify-center my-12">
+                <p>ยังไม่มีคอร์ส <router-link to="/" class="text-yellow-1 font-bold">ดูคอร์สที่น่าสนใจ</router-link></p>
+            </div>
         </div>
     </div>
 </template>
